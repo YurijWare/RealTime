@@ -30,7 +30,7 @@ public class RealTime extends JavaPlugin {
 	
 	public void onEnable() {
 		plugin = this;
-		world = this.getServer().getWorlds().get(0);
+		world = (World) this.getServer().getWorlds().toArray()[0];
 		pdfFile = this.getDescription();
 		
 		thread.start();
