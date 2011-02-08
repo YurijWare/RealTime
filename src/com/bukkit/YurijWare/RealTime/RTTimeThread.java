@@ -34,7 +34,7 @@ public class RTTimeThread implements Runnable {
 		while(active){
 			SetTime();
 			try {
-				Thread.sleep(1000);
+				Thread.sleep(10000);
 			} catch (InterruptedException e) {
 			}
 		}
