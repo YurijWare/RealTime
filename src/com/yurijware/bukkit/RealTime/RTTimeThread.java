@@ -1,4 +1,4 @@
-package com.bukkit.YurijWare.RealTime;
+package com.yurijware.bukkit.RealTime;
 
 import java.util.Calendar;
 import java.util.logging.Logger;
