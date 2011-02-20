@@ -1,6 +1,7 @@
 package com.yurijware.bukkit.RealTime;
 
 import java.util.Calendar;
+import java.util.List;
 import java.util.logging.Logger;
 
 import org.bukkit.World;
@@ -14,10 +15,12 @@ import org.bukkit.World;
 public class RTTimeThread implements Runnable {
 	@SuppressWarnings("unused")
 	private final Logger log = Logger.getLogger("Minecraft");
+	private List<World> worlds = null;
 	
 	private Calendar cal;
 	
-	public RTTimeThread(String threadName) {
+	public RTTimeThread(List<World> worlds) {
+		this.worlds = worlds;
 	}
 	
 	@Override
@@ -25,7 +28,7 @@ public class RTTimeThread implements Runnable {
 		cal = Calendar.getInstance();
 		int hour = cal.get(Calendar.HOUR_OF_DAY);
 		long time = (hour*1000-8000+24000)%24000;
-		for(World w : RealTime.worlds){
+		for(World w : worlds){
 			w.setTime(time);
 		}
 	}

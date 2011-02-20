@@ -1,11 +1,9 @@
 ﻿package com.yurijware.bukkit.RealTime;
 
 import java.io.*;
-import java.util.List;
 import java.util.logging.Logger;
 
 import org.bukkit.Server;
-import org.bukkit.World;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.PluginLoader;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -21,10 +19,9 @@ public class RealTime extends JavaPlugin {
 	private final Logger log = Logger.getLogger("Minecraft");
 	protected static PluginDescriptionFile pdfFile = null;
 	protected static RealTime plugin = null;
-	protected static List<World> worlds = null;
-	protected RTTimeThread thread = new RTTimeThread("RealTime");
+	protected RTTimeThread thread = null;
 	
-	private int repeatTime = 10;
+	private int repeatTime = 20;
 	
 	public RealTime(PluginLoader pluginLoader, Server instance,
 			PluginDescriptionFile desc, File folder, File plugin,
@@ -34,8 +31,8 @@ public class RealTime extends JavaPlugin {
 	
 	public void onEnable() {
 		plugin = this;
-		worlds = this.getServer().getWorlds();
 		pdfFile = this.getDescription();
+		thread = new RTTimeThread(this.getServer().getWorlds());
 		BukkitScheduler scheduler = this.getServer().getScheduler();
 		scheduler.scheduleSyncRepeatingTask(this, thread, 0, repeatTime * 20);
 		
