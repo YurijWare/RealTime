@@ -7,7 +7,7 @@ If the real time is 16.40 then the minecraft time would be 16.00
 
 I haven't done a relly thorough testing, but it seems to work.
 
-__For (maybe) more information, visit the [RealTime](http://yurijware.github.com/RealTime/) site.__
+__For (maybe) more information, visit the [RealTime](http://yurijware.github.com/RealTime) site.__
 
 Compatibility
 ------------
@@ -21,8 +21,8 @@ None discovered yet.
 
 Installation
 ------------
-* Download the [RealTime](https://github.com/downloads/YurijWare/RealTime/RealTime.jar) jar file.
-* Then copy the downloaded jar file into the plugins folder in your craftbukkit folder.
+* Download the [RealTime](https://github.com/YurijWare/RealTime/downloads) zip file.
+* Then extract the downloaded zip file into the plugins folder in your craftbukkit folder.
 
 Changelog
 ----------
